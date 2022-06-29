@@ -5,4 +5,4 @@ This is a solution to the [Product preview card component challenge on Frontend 
 ## Links
 
 - Live Site [URL](https://mhmd-tarek-mhmd.github.io/Product-card-component/)
-- Solution [URL](https://www.frontendmentor.io/solutions/product-card-component-)
+- Solution [URL](https://www.frontendmentor.io/solutions/product-card-component-1_3KQiK-5j)
