@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product card component</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -12,25 +12,25 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Fraunces:wght@700&display=swap"
     />
     <style>
-    	body {
-    		margin: 0;
-    		padding: 0;
-    		display: grid;
+      body {
+        margin: 0;
+        padding: 0;
+        display: grid;
         height: 100vh;
         min-height: 500px;
-    		place-items: center;
+        place-items: center;
         color: hsl(228, 12%, 48%);
-    		background-color: hsl(30, 38%, 92%);
-    		font: 500 14px/1 "Montserrat", sans-serif;
-    	}
+        background-color: hsl(30, 38%, 92%);
+        font: 500 14px/1 "Montserrat", sans-serif;
+      }
 
-    	.card {
+      .card {
         display: grid;
         border-radius: 10px;
         grid-template-rows: 240px 371px;
-    		background-color: hsl(0, 0%, 100%);
+        background-color: hsl(0, 0%, 100%);
         grid-template-columns: minmax(0, 343px);
-    	}
+      }
       @media (min-width: 768px) {
         .card {
           grid-template-rows: 450px;
@@ -38,6 +38,15 @@
         }
       }
 
+      .card-image {
+        position: relative;
+      }
+      .card-image::before {
+        inset: 0;
+        content: "";
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.1);
+      }
       .card-image img {
         width: 100%;
         height: 100%;
@@ -71,16 +80,14 @@
         }
       }
 
-
-
       .top span {
         font-size: 12px;
         letter-spacing: 4px;
         text-transform: uppercase;
       }
       .top h1 {
-        font-size: 2em;
         margin: 17px 0;
+        font-size: 2.2em;
         font-family: "Fraunces";
         color: hsl(212, 21%, 14%);
       }
@@ -96,7 +103,7 @@
       }
 
       .bottom {
-        align-self: end
+        align-self: end;
       }
       .bottom .price {
         gap: 24px;
@@ -116,7 +123,7 @@
         font: inherit;
         display: flex;
         cursor: pointer;
-	font-weight: 700;
+        font-weight: 700;
         margin-top: 21px;
         border-radius: 10px;
         align-items: center;
@@ -137,33 +144,55 @@
   </head>
   <body>
     <main>
-	    <article class="card" aria-labelledby="title" aria-describedby="desc">
-	    	<picture class="card-image">
-	    		<source srcset="images/image-product-mobile.jpg" media="(max-width: 767px)" />
-	    		<source srcset="images/image-product-desktop.jpg" media="(min-width: 768px)" />
-	    		<img src="images/image-product-mobile.jpg" alt="Gabrielle Essence Eau De Parfum" />
-	    	</picture>
+      <article class="card" aria-labelledby="title" aria-describedby="desc">
+        <picture class="card-image">
+          <source
+            srcset="images/image-product-mobile.jpg"
+            media="(max-width: 767px)"
+          />
+          <source
+            srcset="images/image-product-desktop.jpg"
+            media="(min-width: 768px)"
+          />
+          <img
+            src="images/image-product-mobile.jpg"
+            alt="Gabrielle Essence Eau De Parfum"
+          />
+        </picture>
 
-	    	<div class="card-body">
-					<div class="top">
-						<span>perfume</span>
-						<h1 id="title">Gabrielle Essence Eau De Parfum</h1>
-		    		<p id="desc">A floral, solar and voluptuous interpretation composed by Olivier Polge, Perfumer-Creator for the House of CHANEL.</p>
-					</div>
+        <div class="card-body">
+          <div class="top">
+            <span>perfume</span>
+            <h1 id="title">Gabrielle Essence Eau De Parfum</h1>
+            <p id="desc">
+              A floral, solar and voluptuous interpretation composed by Olivier
+              Polge, Perfumer-Creator for the House of CHANEL.
+            </p>
+          </div>
 
-			    <div class="bottom">
-			    	<div class="price">
-			    		<strong>$149.99</strong>
-			    		<del>$169.99</del>
-			    	</div>
+          <div class="bottom">
+            <div class="price">
+              <strong>$149.99</strong>
+              <del>$169.99</del>
+            </div>
 
-			    	<button>
-			    		<svg aria-hidden="true" width="15" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M14.383 10.388a2.397 2.397 0 0 0-1.518-2.222l1.494-5.593a.8.8 0 0 0-.144-.695.8.8 0 0 0-.631-.28H2.637L2.373.591A.8.8 0 0 0 1.598 0H0v1.598h.983l1.982 7.4a.8.8 0 0 0 .799.59h8.222a.8.8 0 0 1 0 1.599H1.598a.8.8 0 1 0 0 1.598h.943a2.397 2.397 0 1 0 4.507 0h1.885a2.397 2.397 0 1 0 4.331-.376 2.397 2.397 0 0 0 1.12-2.021ZM11.26 7.99H4.395L3.068 3.196h9.477L11.26 7.991Zm-6.465 6.392a.8.8 0 1 1 0-1.598.8.8 0 0 1 0 1.598Zm6.393 0a.8.8 0 1 1 0-1.598.8.8 0 0 1 0 1.598Z" fill="#FFF"/></svg>
-			    		Add to Cart
-			    	</button>
-			    </div>
-		    </div>
-	    </article>
+            <button>
+              <svg
+                aria-hidden="true"
+                width="15"
+                height="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M14.383 10.388a2.397 2.397 0 0 0-1.518-2.222l1.494-5.593a.8.8 0 0 0-.144-.695.8.8 0 0 0-.631-.28H2.637L2.373.591A.8.8 0 0 0 1.598 0H0v1.598h.983l1.982 7.4a.8.8 0 0 0 .799.59h8.222a.8.8 0 0 1 0 1.599H1.598a.8.8 0 1 0 0 1.598h.943a2.397 2.397 0 1 0 4.507 0h1.885a2.397 2.397 0 1 0 4.331-.376 2.397 2.397 0 0 0 1.12-2.021ZM11.26 7.99H4.395L3.068 3.196h9.477L11.26 7.991Zm-6.465 6.392a.8.8 0 1 1 0-1.598.8.8 0 0 1 0 1.598Zm6.393 0a.8.8 0 1 1 0-1.598.8.8 0 0 1 0 1.598Z"
+                  fill="#FFF"
+                />
+              </svg>
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </article>
     </main>
   </body>
 </html>
